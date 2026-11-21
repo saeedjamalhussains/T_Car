@@ -1,0 +1,13 @@
+# Rust build output
+/target
+
+# Tauri generated schemas (regenerated on build)
+/apps/desktop/gen/schemas
+
+# macOS
+.DS_Store
+
+# Claude
+.claude/
+CLAUDE.md
+CLAUDE.local.md

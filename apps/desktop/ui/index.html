@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>T-Car</title>
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1><svg class="mark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 149.5 127.0" fill="currentColor" role="img" aria-label="T-Car">  <rect x="0.0" y="79.9" width="47.1" height="47.1" rx="14.3" />  <rect x="51.2" y="51.2" width="47.1" height="75.8" rx="14.3" />  <rect x="102.4" y="0.0" width="47.1" height="127.0" rx="14.3" /></svg>T-Car <span class="wordmark">carrier &amp; gateway lookup</span></h1>
+    <nav id="tabs">
+      <button class="tab active" data-view="single">Lookup</button>
+      <button class="tab" data-view="bulk">Bulk</button>
+      <button class="tab" data-view="data">Data</button>
+      <button class="tab" data-view="providers">Providers</button>
+      <button class="tab" data-view="about">About</button>
+    </nav>
+  </header>
+
+  <main>
+    <!-- ------------------------------------------------ single lookup -->
+    <section id="view-single" class="view">
+      <form id="lookup-form" class="row">
+        <input id="number" type="tel" placeholder="+91 98765 43210  ·  (801) 360-4427" autocomplete="tel" autofocus />
+        <select id="provider" title="Provider"><option value="">Use my chain</option></select>
+        <button type="submit" id="lookup-btn">Look up</button>
+      </form>
+      <p class="hint" id="parsed"></p>
+      <div id="result"></div>
+    </section>
+
+    <!-- ---------------------------------------------------- bulk -->
+    <section id="view-bulk" class="view hidden">
+      <p class="hint">Paste anything — a CSV, a contact list, an email. Every phone number in it,
+        anywhere in the world, gets looked up. Write international numbers with a <code>+</code>.</p>
+      <textarea id="bulk-input" rows="6" placeholder="+91 98765 43210, +44 20 7946 0018, 801-360-4427 ..."></textarea>
+      <div class="row">
+        <button id="bulk-btn">Look up all</button>
+        <button id="bulk-csv" class="secondary" disabled>Copy CSV</button>
+        <span id="bulk-status" class="hint"></span>
+      </div>
+      <div id="bulk-result"></div>
+    </section>
+
+    <!-- ------------------------------------------------------ data -->
+    <section id="view-data" class="view hidden">
+      <p class="hint">Everything this app knows, as it is stored. A lookup is nothing more than a
+        row out of these tables — browsing them shows exactly how much (and how little) a
+        prefix-block database can tell you.</p>
+
+      <div class="row" style="margin-bottom:12px">
+        <div class="segmented" id="data-tabs">
+          <button class="seg active" data-table="areas">Area codes</button>
+          <button class="seg" data-table="carriers">Carrier gateways</button>
+          <button class="seg" data-table="countries">Country codes</button>
+        </div>
+        <input id="data-search" type="search" placeholder="Filter…" />
+        <button id="data-csv" class="secondary">Copy as CSV</button>
+      </div>
+
+      <p class="hint" id="data-status"></p>
+      <div id="data-result"></div>
+    </section>
+
+    <!-- ------------------------------------------------- providers -->
+    <section id="view-providers" class="view hidden">
+      <p class="hint">Providers run top to bottom until one answers. Only <strong>offline</strong>
+        returns data in this demo; the rest are the 2014 originals, kept for study. Credentials stay on this device
+        (<code id="config-path">~/.config/tcar/config.json</code>) and are never sent anywhere else.</p>
+      <label class="row" style="margin-bottom:14px">
+        <span class="hint">Numbers typed without a <code>+</code> are from</span>
+        <select id="default-country"></select>
+      </label>
+      <div id="provider-list"></div>
+      <div class="row">
+        <button id="save-providers">Save</button>
+        <span id="providers-status" class="hint"></span>
+      </div>
+    </section>
+
+    <!-- ----------------------------------------------------- about -->
+    <section id="view-about" class="view hidden">
+      <h2>About</h2>
+      <p class="callout"><strong>Educational demo.</strong> This app exists to show how carrier and
+        SMS-gateway lookup works. Answers come from one offline North American dataset from 2014;
+        the four services the original scraped are included unchanged as study material and no
+        longer return data. Do not rely on any of it for billing, routing, fraud, compliance, or
+        anything touching a real person's service. Phone numbers are personal data — handle them
+        under your local law.</p>
+      <p>A rebuild of <strong>node-tel-carrier</strong> (AJ ONeal, 2014) as a native cross-platform app:
+         Rust core, Tauri shell, one binary per OS.</p>
+      <h3>Worldwide numbers</h3>
+      <p>Any E.164 number parses and formats correctly, worldwide. Carrier data does not follow:
+        the bundled database and the email-to-SMS gateway addresses are North America only, because
+        those were the only datasets the 2014 project had.</p>
+      <h3>Full version</h3>
+      <p>Working worldwide lookups — live scrapers, commercial API integrations, updated gateway
+        data, and an HNI/MCC-MNC database — are not part of this educational demo. For that, email
+        <a href="mailto:projectsjh18@gmail.com">projectsjh18@gmail.com</a>.</p>
+      <ul id="db-info"></ul>
+      <h3>What changed</h3>
+      <ul>
+        <li>Worldwide E.164 parsing instead of one permissive North American regex.</li>
+        <li>Offline prefix database embedded — lookups work with no network.</li>
+        <li>The 2014 services kept intact, each labelled with whether it can still answer.</li>
+        <li>A Data tab that opens the bundled tables up for inspection.</li>
+        <li>No analytics upload. The original POSTed every number it saw to a third-party host.</li>
+      </ul>
+    </section>
+  </main>
+
+  <script type="module" src="app.js"></script>
+</body>
+</html>

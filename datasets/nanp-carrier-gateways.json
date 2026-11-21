@@ -1,0 +1,502 @@
+[
+  {
+    "name": "alaska",
+    "carrier": "Alaska",
+    "wireless": true,
+    "sms": "sms.alaska-wireless.com",
+    "mms": "msg.acsalaska.net",
+    "test": null,
+    "historic": false,
+    "updated": 1393227602319
+  },
+  {
+    "name": "att",
+    "carrier": "AT&T Mobility",
+    "wireless": null,
+    "sms": "txt.att.net",
+    "mms": "mms.att.net",
+    "test": "\\b(AT\\s*&?\\s*T|cingular)\\b",
+    "historic": false,
+    "updated": 1393227602319
+  },
+  {
+    "name": "boost",
+    "carrier": "Boost",
+    "wireless": true,
+    "sms": "myboostmobile.com",
+    "mms": "myboostmobile.com",
+    "test": null,
+    "historic": false,
+    "updated": 1393227602319
+  },
+  {
+    "name": "cricket",
+    "carrier": "Cricket",
+    "wireless": true,
+    "sms": "sms.mycricket.com",
+    "mms": "mms.mycricket.com",
+    "test": null,
+    "historic": false,
+    "updated": 1393227602319
+  },
+  {
+    "name": "qwest",
+    "carrier": "Qwest Corporation",
+    "wireless": false,
+    "sms": "qwestmp.com",
+    "mms": null,
+    "test": null,
+    "historic": false,
+    "updated": 1393227602319
+  },
+  {
+    "name": "sprint",
+    "carrier": "Sprint",
+    "wireless": true,
+    "sms": "messaging.sprintpcs.com",
+    "mms": "pm.sprint.com",
+    "test": null,
+    "historic": false,
+    "updated": 1393227602319
+  },
+  {
+    "name": "syringa",
+    "carrier": "Syringa Wireless",
+    "wireless": true,
+    "sms": "rinasms.com",
+    "mms": null,
+    "test": null,
+    "historic": false,
+    "updated": 1393227602319
+  },
+  {
+    "name": "tmobile",
+    "carrier": "T-Mobile",
+    "wireless": true,
+    "sms": "tmomail.net",
+    "mms": "tmomail.net",
+    "test": "\\bt-?mobile\\b",
+    "historic": false,
+    "updated": 1393227602319
+  },
+  {
+    "name": "metropcs",
+    "carrier": "T-Mobile_MetroPCS",
+    "wireless": true,
+    "sms": "tmomail.net",
+    "mms": "tmomail.net",
+    "test": null,
+    "historic": false,
+    "updated": 1393227602319
+  },
+  {
+    "name": "uscellular",
+    "carrier": "US Cellular",
+    "wireless": true,
+    "sms": "email.uscc.net",
+    "mms": "mms.uscc.net",
+    "test": "\\b((u\\.?s\\.?\\s*cellular)|(united\\s*states\\s*cellular))\\b",
+    "historic": false,
+    "updated": 1393227602319
+  },
+  {
+    "name": "verizon",
+    "carrier": "Verizon Wireless",
+    "wireless": null,
+    "sms": "vtext.com",
+    "mms": "vzwpix.com",
+    "test": null,
+    "historic": false,
+    "updated": 1393227602319
+  },
+  {
+    "name": "viaero",
+    "carrier": "Viaero Wireless",
+    "wireless": true,
+    "sms": "viaerosms.com",
+    "mms": "mmsviaero.com",
+    "test": null,
+    "historic": false,
+    "updated": 1393227602319
+  },
+  {
+    "name": "virgin",
+    "carrier": "Virgin Mobile",
+    "wireless": true,
+    "sms": "vmobl.com",
+    "mms": "vmpix.com",
+    "test": null,
+    "historic": false,
+    "updated": 1393227602319
+  },
+  {
+    "name": "wind",
+    "carrier": "Wind Telecom",
+    "wireless": true,
+    "sms": "txt.windmobile.ca",
+    "mms": "mms.windmobile.ca",
+    "test": null,
+    "historic": false,
+    "updated": 1393227602319
+  },
+  {
+    "name": "alltel",
+    "carrier": "Alltel",
+    "wireless": true,
+    "sms": "text.wireless.alltel.com",
+    "mms": null,
+    "test": null,
+    "historic": true,
+    "updated": null
+  },
+  {
+    "name": "alltel",
+    "carrier": "Alltel",
+    "wireless": true,
+    "sms": "message.alltel.com",
+    "mms": null,
+    "test": null,
+    "historic": true,
+    "updated": null
+  },
+  {
+    "name": "alltel",
+    "carrier": "Alltel",
+    "wireless": null,
+    "sms": "sms.alltelwireless.com",
+    "mms": null,
+    "test": null,
+    "historic": true,
+    "updated": null
+  },
+  {
+    "name": "ameritech",
+    "carrier": "Ameritech",
+    "wireless": null,
+    "sms": "paging.acswireless.com",
+    "mms": null,
+    "test": null,
+    "historic": true,
+    "updated": null
+  },
+  {
+    "name": "bellsouth",
+    "carrier": "BellSouth",
+    "wireless": null,
+    "sms": "bellsouth.cl",
+    "mms": null,
+    "test": null,
+    "historic": true,
+    "updated": null
+  },
+  {
+    "name": "bluegrass",
+    "carrier": "Bluegrass Cellular",
+    "wireless": null,
+    "sms": "sms.bluecell.com",
+    "mms": null,
+    "test": null,
+    "historic": true,
+    "updated": null
+  },
+  {
+    "name": "cspire",
+    "carrier": "C Spire Wireless",
+    "wireless": null,
+    "sms": "cspire1.com",
+    "mms": null,
+    "test": null,
+    "historic": true,
+    "updated": null
+  },
+  {
+    "name": "cellcom",
+    "carrier": "Cellcom",
+    "wireless": null,
+    "sms": "cellcom.quiktxt.com",
+    "mms": null,
+    "test": null,
+    "historic": true,
+    "updated": null
+  },
+  {
+    "name": "cellularone",
+    "carrier": "Cellular One",
+    "wireless": null,
+    "sms": "mobile.celloneusa.com",
+    "mms": null,
+    "test": null,
+    "historic": true,
+    "updated": null
+  },
+  {
+    "name": "cellularsouth",
+    "carrier": "Cellular South",
+    "wireless": null,
+    "sms": "csouth1.com",
+    "mms": null,
+    "test": null,
+    "historic": true,
+    "updated": null
+  },
+  {
+    "name": "cingular",
+    "carrier": "cingular",
+    "wireless": true,
+    "sms": "cingularme.com",
+    "mms": null,
+    "test": null,
+    "historic": true,
+    "updated": null
+  },
+  {
+    "name": "charitonvalley",
+    "carrier": "Chariton Valley Wireless",
+    "wireless": null,
+    "sms": "sms.cvalley.net",
+    "mms": null,
+    "test": null,
+    "historic": true,
+    "updated": null
+  },
+  {
+    "name": "cleartalk",
+    "carrier": "Cleartalk",
+    "wireless": null,
+    "sms": "sms.cleartalk.us",
+    "mms": null,
+    "test": null,
+    "historic": true,
+    "updated": null
+  },
+  {
+    "name": "edge",
+    "carrier": "Edge Wireless",
+    "wireless": null,
+    "sms": "sms.edgewireless.com",
+    "mms": null,
+    "test": null,
+    "historic": true,
+    "updated": null
+  },
+  {
+    "name": "element",
+    "carrier": "Element Mobile",
+    "wireless": null,
+    "sms": "SMS.elementmobile.net",
+    "mms": null,
+    "test": null,
+    "historic": true,
+    "updated": null
+  },
+  {
+    "name": "esendex",
+    "carrier": "Esendex",
+    "wireless": null,
+    "sms": "echoemail.net",
+    "mms": null,
+    "test": null,
+    "historic": true,
+    "updated": null
+  },
+  {
+    "name": "googlevoice",
+    "carrier": "Google Voice",
+    "wireless": null,
+    "sms": "txt.voice.google.com",
+    "mms": null,
+    "test": "\\b(g(oogle)?\\s*voice)\\b",
+    "historic": true,
+    "updated": null
+  },
+  {
+    "name": "gophone",
+    "carrier": "gophone",
+    "wireless": true,
+    "sms": "cingularme.com",
+    "mms": null,
+    "test": null,
+    "historic": true,
+    "updated": null
+  },
+  {
+    "name": "gophone",
+    "carrier": "Cingular (GoPhone prepaid)",
+    "wireless": null,
+    "sms": "cingulartext.com",
+    "mms": null,
+    "test": null,
+    "historic": true,
+    "updated": null
+  },
+  {
+    "name": "kajeet",
+    "carrier": "Kajeet",
+    "wireless": null,
+    "sms": "mobile.kajeet.net",
+    "mms": null,
+    "test": null,
+    "historic": true,
+    "updated": null
+  },
+  {
+    "name": "longlines",
+    "carrier": "LongLines",
+    "wireless": null,
+    "sms": "text.longlines.com",
+    "mms": null,
+    "test": null,
+    "historic": true,
+    "updated": null
+  },
+  {
+    "name": "metropcs",
+    "carrier": "MetroPCS",
+    "wireless": null,
+    "sms": "mymetropcs.com",
+    "mms": null,
+    "test": null,
+    "historic": true,
+    "updated": null
+  },
+  {
+    "name": "nextel",
+    "carrier": "Nextel",
+    "wireless": true,
+    "sms": "messaging.nextel.com",
+    "mms": null,
+    "test": null,
+    "historic": true,
+    "updated": null
+  },
+  {
+    "name": "o2",
+    "carrier": "O2",
+    "wireless": null,
+    "sms": "mobile.celloneusa.com",
+    "mms": null,
+    "test": null,
+    "historic": true,
+    "updated": null
+  },
+  {
+    "name": "orange",
+    "carrier": "Orange",
+    "wireless": null,
+    "sms": "mobile.celloneusa.com",
+    "mms": null,
+    "test": null,
+    "historic": true,
+    "updated": null
+  },
+  {
+    "name": "pioneer",
+    "carrier": "Pioneer Cellular",
+    "wireless": null,
+    "sms": "zsend.com",
+    "mms": null,
+    "test": null,
+    "historic": true,
+    "updated": null
+  },
+  {
+    "name": "powertel",
+    "carrier": "powertel",
+    "wireless": null,
+    "sms": "ptel.net",
+    "mms": null,
+    "test": null,
+    "historic": true,
+    "updated": null
+  },
+  {
+    "name": "qwest",
+    "carrier": "Qwest Wireless",
+    "wireless": null,
+    "sms": "qwestmp.com",
+    "mms": null,
+    "test": null,
+    "historic": true,
+    "updated": null
+  },
+  {
+    "name": "redpocket",
+    "carrier": "Red Pocket Mobile",
+    "wireless": null,
+    "sms": "txt.att.net",
+    "mms": null,
+    "test": null,
+    "historic": true,
+    "updated": null
+  },
+  {
+    "name": "simple",
+    "carrier": "Simple Mobile",
+    "wireless": null,
+    "sms": "smtext.com",
+    "mms": null,
+    "test": null,
+    "historic": true,
+    "updated": null
+  },
+  {
+    "name": "southcentral",
+    "carrier": "South Central Communications",
+    "wireless": null,
+    "sms": "rinasms.com",
+    "mms": null,
+    "test": null,
+    "historic": true,
+    "updated": null
+  },
+  {
+    "name": "straighttalk",
+    "carrier": "Straight Talk",
+    "wireless": null,
+    "sms": "vtext.com",
+    "mms": null,
+    "test": null,
+    "historic": true,
+    "updated": null
+  },
+  {
+    "name": "suncom",
+    "carrier": "suncom",
+    "wireless": null,
+    "sms": "tms.suncom.com",
+    "mms": null,
+    "test": null,
+    "historic": true,
+    "updated": null
+  },
+  {
+    "name": "teleflip",
+    "carrier": "Teleflip",
+    "wireless": null,
+    "sms": "teleflip.com",
+    "mms": null,
+    "test": null,
+    "historic": true,
+    "updated": null
+  },
+  {
+    "name": "unicel",
+    "carrier": "Unicel",
+    "wireless": null,
+    "sms": "utext.com",
+    "mms": null,
+    "test": null,
+    "historic": true,
+    "updated": null
+  },
+  {
+    "name": "usamobility",
+    "carrier": "USA Mobility",
+    "wireless": null,
+    "sms": "usamobility.net",
+    "mms": null,
+    "test": null,
+    "historic": true,
+    "updated": null
+  }
+]

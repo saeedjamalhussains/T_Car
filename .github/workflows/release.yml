@@ -1,0 +1,90 @@
+# Builds T-Car for macOS, Windows, and Linux.
+#
+# Every desktop bundle is built on its own OS: the Tauri shell links against a
+# platform webview (WebKit on macOS, WebView2 on Windows, webkit2gtk on Linux),
+# so cross-compiling a GUI bundle from one OS to another is not supported.
+# GitHub's runners give you all three for free.
+#
+# Push a tag (`git tag v2.0.0 && git push --tags`) to attach the bundles to a
+# draft release, or run the workflow by hand from the Actions tab.
+
+name: build
+
+on:
+  push:
+    tags: ["v*"]
+  workflow_dispatch:
+
+jobs:
+  desktop:
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - os: macos-latest
+            target: aarch64-apple-darwin
+            label: macos-arm64          # .app + .dmg
+          - os: macos-latest
+            target: x86_64-apple-darwin
+            label: macos-intel
+          - os: windows-latest
+            target: x86_64-pc-windows-msvc
+            label: windows-x64          # .msi + NSIS .exe installer
+          - os: ubuntu-22.04
+            target: x86_64-unknown-linux-gnu
+            label: linux-x64            # .deb + .rpm + .AppImage
+
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install Linux webview dependencies
+        if: startsWith(matrix.os, 'ubuntu')
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y \
+            libwebkit2gtk-4.1-dev libappindicator3-dev librsvg2-dev \
+            patchelf libssl-dev build-essential file
+
+      - uses: dtolnay/rust-toolchain@stable
+        with:
+          targets: ${{ matrix.target }}
+
+      - uses: swatinem/rust-cache@v2
+        with:
+          workspaces: . -> target
+
+      - name: Build the desktop bundles
+        uses: tauri-apps/tauri-action@v0
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          projectPath: apps/desktop
+          args: --target ${{ matrix.target }}
+          tagName: ${{ github.ref_type == 'tag' && github.ref_name || '' }}
+          releaseName: "T-Car ${{ github.ref_name }}"
+          releaseDraft: true
+
+      - name: Build the tcar CLI
+        run: cargo build --release --target ${{ matrix.target }} -p tcar-cli
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: tcar-${{ matrix.label }}
+          path: |
+            target/${{ matrix.target }}/release/bundle/**/*.dmg
+            target/${{ matrix.target }}/release/bundle/**/*.msi
+            target/${{ matrix.target }}/release/bundle/**/*-setup.exe
+            target/${{ matrix.target }}/release/bundle/**/*.deb
+            target/${{ matrix.target }}/release/bundle/**/*.rpm
+            target/${{ matrix.target }}/release/bundle/**/*.AppImage
+            target/${{ matrix.target }}/release/tcar
+            target/${{ matrix.target }}/release/tcar.exe
+          if-no-files-found: warn
+
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: dtolnay/rust-toolchain@stable
+      - run: cargo test -p tcar-core
